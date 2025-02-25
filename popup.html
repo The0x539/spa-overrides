@@ -24,9 +24,10 @@
           />
           <input
             type="checkbox"
-            x-bind:disabled="!o.value"
+            x-bind:disabled="!o.value.trim()"
             x-model="o.active"
             x-on:change="saveOverride(o)"
+            x-effect="$el.indeterminate = !o.value.trim()"
           />
         </li>
       </template>
