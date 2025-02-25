@@ -1,0 +1,45 @@
+* {
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  display: grid;
+
+  grid-template-areas:
+    "label   checkbox"
+    "textbox checkbox";
+
+  grid-template-columns: 350px min-content;
+  column-gap: 0.5em;
+
+  margin-inline: 1em;
+  margin-block-start: 1em;
+}
+
+label {
+  grid-area: label;
+  align-self: end; /* bottom */
+  justify-self: start; /* left */
+}
+
+input[type=checkbox] {
+  grid-area: checkbox;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+
+  align-self: center;
+  justify-self: center;
+}
+
+input[type=text] {
+  grid-area: textbox;
+  height: 1.5em;
+}

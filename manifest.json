@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "SPA Overrides",
+  "version": "1.0",
+
+  "description": "A lightweight tool for making microfrontend substitutions.",
+
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+
+  "permissions": ["activeTab", "storage"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.svg",
+    "default_title": "SPA Overrides",
+    "default_popup": "popup.html"
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
