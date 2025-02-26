@@ -26,5 +26,11 @@
     "default_popup": "popup.html"
   },
 
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{9012bb11-adcd-4233-8d48-6a0257aac7c1}"
+    }
+  }
 }
