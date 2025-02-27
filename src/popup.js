@@ -1,9 +1,11 @@
+import Alpine from "npm:alpinejs@^3.14.8";
+
 async function readOverrides() {
   try {
     const [overrides] = await browser.tabs.executeScript({ code: "readOverrides()" });
     return overrides ?? [];
   } catch (e) {
-    console.log('Failed to read single-spa import map overrides:', e);
+    console.log("Failed to read single-spa import map overrides:", e);
     return [];
   }
 }
@@ -18,3 +20,7 @@ async function saveOverride(override) {
   const id = await getActiveTabId();
   await browser.tabs.sendMessage(id, Alpine.raw(override));
 }
+
+Object.assign(globalThis, { readOverrides, saveOverride, Alpine });
+
+Alpine.start();

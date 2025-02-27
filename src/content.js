@@ -1,5 +1,3 @@
-let importMapOverrides;
-
 function readOverrides() {
   const clone = (obj) => cloneInto(obj, window, { cloneFunctions: true });
 
@@ -43,3 +41,4 @@ if (!window.__SINGLE_SPA_OVERRIDES__) {
   Object.defineProperty(window, "__SINGLE_SPA_DEVTOOLS__", { value: {} });
 }
 
+Object.assign(window, { readOverrides });
