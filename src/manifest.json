@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "SPA Overrides",
   "version": "1.0",
 
@@ -10,23 +10,30 @@
     "96": "icon.svg"
   },
 
-  "permissions": ["activeTab", "storage"],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
 
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_start"
+      "js": ["install-devtools.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ],
 
-  "browser_action": {
+  "action": {
     "default_icon": "icon.svg",
     "default_title": "SPA Overrides",
     "default_popup": "popup.html"
   },
-
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
 
   "browser_specific_settings": {
     "gecko": {

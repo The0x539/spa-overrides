@@ -20,7 +20,7 @@ for (const srcPath of toCopy) {
 
 const entryPoints = [
   "./src/popup-ui.js",
-  "./src/content.js",
+  "./src/install-devtools.js",
 ];
 
 await esbuild.build({
