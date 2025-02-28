@@ -1,6 +1,9 @@
-import Alpine from "npm:alpinejs@^3.14.8";
+async function getActiveTabId() {
+  const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+  return tabs[0].id;
+}
 
-async function readOverrides() {
+export async function readOverrides() {
   try {
     const [overrides] = await browser.tabs.executeScript({ code: "readOverrides()" });
     return overrides ?? [];
@@ -10,17 +13,8 @@ async function readOverrides() {
   }
 }
 
-async function getActiveTabId() {
-  const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-  return tabs[0].id;
-}
-
-async function saveOverride(override) {
+export async function saveOverride(override) {
   override.value = override.value.trim();
   const id = await getActiveTabId();
-  await browser.tabs.sendMessage(id, Alpine.raw(override));
+  await browser.tabs.sendMessage(id, override);
 }
-
-Object.assign(globalThis, { readOverrides, saveOverride, Alpine });
-
-Alpine.start();

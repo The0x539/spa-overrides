@@ -3,35 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="popup.css" />
-    <script defer src="popup.js"></script>
+    <script type="module" src="popup-ui.js"></script>
   </head>
 
-  <body
-    x-data="{ overrides: [] }"
-    x-init="overrides = await readOverrides()"
-  >
-    <ul x-show="overrides.length > 0">
-      <template x-for="o in overrides">
-        <li>
-          <!-- <label x-text="JSON.stringify(o)"></label> -->
-          <label x-text="o.name"></label>
-          <input
-            type="text"
-            autocomplete="url"
-            x-model="o.value"
-            x-on:change="saveOverride(o)"
-          />
-          <input
-            type="checkbox"
-            x-bind:disabled="!o.value.trim()"
-            x-model="o.active"
-            x-on:change="saveOverride(o)"
-            x-effect="$el.indeterminate = !o.value.trim()"
-          />
-        </li>
-      </template>
-    </ul>
-
-    <p x-show="overrides.length === 0">No microfrontends found.</p>
-  </body>
+  <body></body>
 </html>

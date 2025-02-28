@@ -19,7 +19,7 @@ for (const srcPath of toCopy) {
 }
 
 const entryPoints = [
-  "./src/popup.js",
+  "./src/popup-ui.js",
   "./src/content.js",
 ];
 

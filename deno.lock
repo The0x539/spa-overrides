@@ -2,17 +2,16 @@
   "version": "4",
   "specifiers": {
     "jsr:@luca/esbuild-deno-loader@~0.11.1": "0.11.1",
-    "jsr:@oazmi/esbuild-plugin-deno@0.1.4": "0.1.4",
-    "jsr:@oazmi/kitchensink@0.9.8": "0.9.8",
     "jsr:@std/bytes@^1.0.2": "1.0.5",
     "jsr:@std/encoding@^1.0.5": "1.0.7",
     "jsr:@std/fs@*": "1.0.13",
-    "jsr:@std/jsonc@^1.0.1": "1.0.1",
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.6": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
-    "jsr:@std/semver@^1.0.3": "1.0.4",
-    "npm:esbuild@0.25": "0.25.0"
+    "npm:@preact/signals@^2.0.1": "2.0.1_preact@10.26.3",
+    "npm:esbuild@0.25": "0.25.0",
+    "npm:htm@^3.1.1": "3.1.1",
+    "npm:preact@^10.26.3": "10.26.3"
   },
   "jsr": {
     "@luca/esbuild-deno-loader@0.11.1": {
@@ -22,17 +21,6 @@
         "jsr:@std/encoding",
         "jsr:@std/path@^1.0.6"
       ]
-    },
-    "@oazmi/esbuild-plugin-deno@0.1.4": {
-      "integrity": "c2814e0590b1a3ce2c110179b28e7fab07c286f2f167e9a995775c79502bb2d9",
-      "dependencies": [
-        "jsr:@oazmi/kitchensink",
-        "jsr:@std/jsonc",
-        "jsr:@std/semver"
-      ]
-    },
-    "@oazmi/kitchensink@0.9.8": {
-      "integrity": "7d8f4aaff43462e9c80c087e5c864ce074e0b414a3b5bad92be3107a0e42bae6"
     },
     "@std/bytes@1.0.5": {
       "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
@@ -46,14 +34,8 @@
         "jsr:@std/path@^1.0.8"
       ]
     },
-    "@std/jsonc@1.0.1": {
-      "integrity": "6b36956e2a7cbb08ca5ad7fbec72e661e6217c202f348496ea88747636710dda"
-    },
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
-    },
-    "@std/semver@1.0.4": {
-      "integrity": "a62af791917d8fd6c48d6ebbb872f83fad3fc6671ffadbbd39ea229c2d34d175"
     }
   },
   "npm": {
@@ -132,6 +114,16 @@
     "@esbuild/win32-x64@0.25.0": {
       "integrity": "sha512-ZENoHJBxA20C2zFzh6AI4fT6RraMzjYw4xKWemRTRmRVtN9c5DcH9r/f2ihEkMjOW5eGgrwCslG/+Y/3bL+DHQ=="
     },
+    "@preact/signals-core@1.8.0": {
+      "integrity": "sha512-OBvUsRZqNmjzCZXWLxkZfhcgT+Fk8DDcT/8vD6a1xhDemodyy87UJRJfASMuSD8FaAIeGgGm85ydXhm7lr4fyA=="
+    },
+    "@preact/signals@2.0.1_preact@10.26.3": {
+      "integrity": "sha512-f9p/utMgttPb9bJ+UgRBkTDZ9uQiZfX1/gV3pXGWz+yGNQj8MrnG55Xo8MAG4IHcb5UXQO6tvt9ZlsM4A2j+Rw==",
+      "dependencies": [
+        "@preact/signals-core",
+        "preact"
+      ]
+    },
     "esbuild@0.25.0": {
       "integrity": "sha512-BXq5mqc8ltbaN34cDqWuYKyNhX8D/Z0J1xdtdQ8UcIIIyJyz+ZMKUt58tF3SrZ85jcfN/PZYhjR5uDQAYNVbuw==",
       "dependencies": [
@@ -161,6 +153,19 @@
         "@esbuild/win32-ia32",
         "@esbuild/win32-x64"
       ]
+    },
+    "htm@3.1.1": {
+      "integrity": "sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ=="
+    },
+    "preact@10.26.3": {
+      "integrity": "sha512-OJCfNTdttkOTCbTN+gCnXn/woDqz1dIjvP+gdCoYGP2kKuX6w79FAP8qgY/r7jgAunvqHVVmEOKzKOFWzrXZdw=="
     }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:@preact/signals@^2.0.1",
+      "npm:htm@^3.1.1",
+      "npm:preact@^10.26.3"
+    ]
   }
 }
