@@ -1,13 +1,12 @@
 import { readOverrides, saveOverride } from "./popup.js";
 
-import { Component, h, render } from "preact";
-import { useSignal, useComputed } from "@preact/signals";
+import { h, render } from "preact";
+import { useComputed, useSignal } from "@preact/signals";
 import htm from "htm";
 
 const html = htm.bind(h);
 
 const OverrideItem = (props) => {
-  const name = props.name;
   const overrideUrl = useSignal(props.value);
   const active = useSignal(props.active);
 

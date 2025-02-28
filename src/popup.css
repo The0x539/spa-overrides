@@ -38,7 +38,7 @@ label {
   justify-self: start; /* left */
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   grid-area: checkbox;
 
   width: calc(1.5em + 6px);
@@ -51,7 +51,7 @@ input[type=checkbox] {
   accent-color: #0288d1;
 }
 
-input[type=text] {
+input[type="text"] {
   grid-area: textbox;
   height: 1.5em;
 
