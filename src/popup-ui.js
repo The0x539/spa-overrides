@@ -63,5 +63,8 @@ export const Popup = (props) => {
   `;
 };
 
-const overrides = await readOverrides();
+let overrides = [];
+try {
+  overrides = await readOverrides();
+} catch {}
 render(h(Popup, { overrides }), document.body);
