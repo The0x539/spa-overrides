@@ -71,7 +71,9 @@ await esbuild.build({
 
 esbuild.stop();
 
-await fs.ensureDir("./pack");
+if (args.target !== "dev") {
+  await fs.ensureDir("./pack");
+}
 
 if (args.target === "firefox") {
   await webExt.cmd.build({
