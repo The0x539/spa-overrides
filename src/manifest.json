@@ -1,6 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SPA Overrides",
+  "author": "The0x539",
+  "homepage_url": "https://github.com/The0x539/spa-overrides",
   "version": "1.0",
 
   "description": "A lightweight tool for making microfrontend substitutions.",
